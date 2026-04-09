@@ -1,0 +1,31 @@
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.statNum {
+  font-family: "Outfit", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--forest-300);
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.statusSelect {
+  background: var(--forest-900);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 13px;
+  padding: 5px 8px;
+  width: auto;
+}

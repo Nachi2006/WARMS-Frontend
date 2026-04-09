@@ -1,0 +1,76 @@
+.statusBanner {
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.online {
+  background: rgba(61, 160, 102, 0.15);
+  border: 1px solid rgba(61, 160, 102, 0.3);
+  color: var(--forest-200);
+}
+
+.offline {
+  background: rgba(224, 168, 64, 0.15);
+  border: 1px solid rgba(224, 168, 64, 0.3);
+  color: var(--gold-300);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.counters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.counterCard {
+  text-align: center;
+  padding: 20px;
+}
+
+.counterNum {
+  font-family: "Outfit", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--forest-300);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.counterLabel {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.syncBtn {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}

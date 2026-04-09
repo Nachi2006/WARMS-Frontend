@@ -1,0 +1,140 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/app/visitor/species/species.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.species_layout__WPJfb {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .species_layout__WPJfb { grid-template-columns: 1fr; }
+}
+
+.species_dropZone__iysrM {
+  border: 2px dashed var(--border-bright);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 220px;
+  padding: 32px;
+  text-align: center;
+  transition: all var(--transition);
+  color: var(--text-muted);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.species_dropZone__iysrM:hover {
+  border-color: var(--forest-400);
+  background: rgba(61, 160, 102, 0.05);
+  color: var(--text-secondary);
+}
+
+.species_dragging__mlNgo {
+  border-color: var(--forest-300);
+  background: rgba(61, 160, 102, 0.1);
+  transform: scale(1.01);
+}
+
+.species_hasPreview__Mbyue {
+  padding: 0;
+  min-height: 260px;
+  border-color: var(--forest-500);
+}
+
+.species_previewImg___Wgss {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: calc(var(--radius-md) - 2px);
+}
+
+.species_dropText__lXGhw {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.species_dropSub__g8lyH {
+  font-size: 12px;
+}
+
+.species_fileName__2IE2v {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.species_placeholder___9B_T {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 40px;
+  color: var(--text-muted);
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+}
+
+.species_resultCard__m7Va1 {
+  padding: 28px;
+}
+
+.species_resultHeader__dxUlb {
+  margin-bottom: 16px;
+}
+
+.species_speciesName__mi0_z {
+  font-family: "Outfit", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--forest-200);
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
+.species_speciesSub__112Ge {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+
+.species_confidenceWrap__I0Nkq {
+  margin-top: 8px;
+}
+
+.species_confidenceLabel__XppQP {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.species_confidenceVal__daThB {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.species_confidenceBar__sfouj {
+  background: var(--forest-800);
+  border-radius: var(--radius-full);
+  height: 10px;
+  overflow: hidden;
+}
+
+.species_confidenceFill___gu_o {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.8s ease;
+}
+

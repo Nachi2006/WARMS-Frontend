@@ -1,0 +1,58 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/app/visitor/complaints/complaints.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.complaints_layout__IFDkD {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  grid-gap: 24px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .complaints_layout__IFDkD { grid-template-columns: 1fr; }
+}
+
+.complaints_coordRow__Fs6Yu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.complaints_complaintList__dgCRu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.complaints_complaintCard__DjMfi {
+  padding: 18px;
+}
+
+.complaints_complaintHeader__ZP4S3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.complaints_complaintDate__JM8eo {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.complaints_complaintDesc__85asO {
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.complaints_complaintCoords__KSMpu {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: monospace;
+}
+

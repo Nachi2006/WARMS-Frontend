@@ -1,0 +1,112 @@
+.typeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.typeBtn {
+  background: var(--forest-800);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  font-size: 13px;
+  transition: all var(--transition);
+}
+
+.typeBtn:hover {
+  border-color: var(--forest-500);
+  color: var(--text-primary);
+}
+
+.typeBtnActive {
+  border-color: var(--forest-400);
+  background: rgba(61, 160, 102, 0.15);
+  color: var(--forest-300);
+}
+
+.typeEmoji {
+  font-size: 22px;
+}
+
+.photoSection {
+  margin-bottom: 16px;
+}
+
+.captureBtn {
+  background: var(--forest-800);
+  border: 2px dashed var(--border-bright);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 32px;
+  width: 100%;
+  transition: all var(--transition);
+}
+
+.captureBtn:hover {
+  border-color: var(--forest-400);
+  color: var(--text-primary);
+}
+
+.photoPreview {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.photoImg {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.retakeBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-sm);
+  color: white;
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  text-align: center;
+  gap: 8px;
+}
+
+.successIcon {
+  width: 56px;
+  height: 56px;
+  background: rgba(61, 160, 102, 0.2);
+  border: 2px solid var(--forest-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--forest-300);
+  margin-bottom: 8px;
+}
+
+.successText {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}

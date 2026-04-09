@@ -1,0 +1,68 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/app/visitor/map/map.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.map_mapWrapper__WSPR9 {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+.map_mapLoading__jgojn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 500px;
+  color: var(--text-secondary);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+}
+
+.map_legendRow__V1MUc {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.map_legendItem__JOrMw {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.map_legendDot__VuRmJ {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.map_statsRow__PoNBN {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 12px;
+  gap: 12px;
+}
+
+.map_statNum__0vk8U {
+  font-family: "Outfit", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--forest-300);
+  margin-bottom: 4px;
+}
+
+.map_statLabel__1FBy5 {
+  color: var(--text-muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+

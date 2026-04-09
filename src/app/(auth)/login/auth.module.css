@@ -1,0 +1,86 @@
+.authPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(ellipse at 20% 50%, rgba(45, 125, 79, 0.12) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(61, 160, 102, 0.08) 0%, transparent 50%),
+              var(--forest-900);
+  position: relative;
+  overflow: hidden;
+}
+
+.authPage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(61, 160, 102, 0.08) 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.authCard {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  max-width: 440px;
+  padding: 48px 40px;
+  position: relative;
+  width: 100%;
+  animation: fadeIn 0.4s ease;
+}
+
+.authLogo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.authTitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.authSubtitle {
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.authFooter {
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.authFooter a {
+  color: var(--forest-300);
+  font-weight: 600;
+}
+
+.authFooter a:hover {
+  color: var(--forest-200);
+}
+
+@media (max-width: 480px) {
+  .authCard {
+    padding: 32px 24px;
+  }
+}

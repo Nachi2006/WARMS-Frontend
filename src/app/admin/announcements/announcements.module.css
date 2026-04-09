@@ -1,0 +1,50 @@
+.annGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.annCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform var(--transition);
+}
+
+.annCard:hover {
+  transform: translateY(-2px);
+}
+
+.annHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.annDate {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.annTitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.annBody {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.annActions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}

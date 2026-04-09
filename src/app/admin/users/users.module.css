@@ -1,0 +1,21 @@
+.roleSelect {
+  background: var(--forest-900);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 13px;
+  padding: 5px 8px;
+  width: auto;
+}
+
+.statusWrap {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,52 @@
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+.coordRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.complaintList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.complaintCard {
+  padding: 18px;
+}
+
+.complaintHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.complaintDate {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.complaintDesc {
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.complaintCoords {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: monospace;
+}

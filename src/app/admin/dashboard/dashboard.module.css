@@ -1,0 +1,122 @@
+.statCard {
+  border-top: 3px solid transparent;
+  transition: transform var(--transition);
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+}
+
+.statIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.statNum {
+  font-family: "Outfit", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.statSub {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.recentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .recentGrid { grid-template-columns: 1fr; }
+}
+
+.cardTitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.recentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.recentRow:last-child {
+  border-bottom: none;
+}
+
+.recentPrimary {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.recentSub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.roleBar {
+  margin-bottom: 14px;
+}
+
+.roleLabel {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.roleCount {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.roleTrack {
+  background: var(--forest-900);
+  border-radius: var(--radius-full);
+  height: 8px;
+  overflow: hidden;
+}
+
+.roleFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.6s ease;
+}
