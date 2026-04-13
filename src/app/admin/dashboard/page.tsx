@@ -11,15 +11,26 @@ interface StatCardProps {
   icon: React.ReactNode;
   color: string;
   sub?: string;
+  href?: string;
 }
 
-function StatCard({ value, label, icon, color, sub }: StatCardProps) {
-  return (
-    <div className={`card ${styles.statCard}`} style={{ borderTopColor: color }}>
+function StatCard({ value, label, icon, color, sub, href }: StatCardProps) {
+  const content = (
+    <>
       <div className={styles.statIcon} style={{ background: `${color}20`, color }}>{icon}</div>
       <div className={styles.statNum}>{value}</div>
       <div className={styles.statLabel}>{label}</div>
       {sub && <div className={styles.statSub}>{sub}</div>}
+    </>
+  );
+
+  return href ? (
+    <a href={href} className={`card ${styles.statCard}`} style={{ borderTopColor: color, textDecoration: 'none', display: 'block', cursor: 'pointer' }}>
+      {content}
+    </a>
+  ) : (
+    <div className={`card ${styles.statCard}`} style={{ borderTopColor: color }}>
+      {content}
     </div>
   );
 }
@@ -48,6 +59,7 @@ export default function AdminDashboard() {
           icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /></svg>}
           color="#3da066"
           sub={`${users.filter((u) => u.role === "ranger").length} rangers`}
+          href="/admin/users"
         />
         <StatCard
           value={openIncidents}
@@ -55,6 +67,7 @@ export default function AdminDashboard() {
           icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /></svg>}
           color="#e05252"
           sub={`${incidents.length} total`}
+          href="/admin/incidents"
         />
         <StatCard
           value={availableItems}
@@ -62,6 +75,7 @@ export default function AdminDashboard() {
           icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /></svg>}
           color="#c9872f"
           sub={`${items.length} total items`}
+          href="/admin/inventory"
         />
         <StatCard
           value={pendingComplaints}
@@ -69,6 +83,7 @@ export default function AdminDashboard() {
           icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>}
           color="#3d8fa0"
           sub={`${complaints.length} total`}
+          href="/admin/complaints"
         />
       </div>
 

@@ -1,5 +1,7 @@
 "use client";
 import { useAnnouncements } from "@/hooks/useAnnouncements";
+import { useHotspots } from "@/hooks/useHotspots";
+import { useBookings } from "@/hooks/useBookings";
 import styles from "./dashboard.module.css";
 
 function formatDate(dt: string) {
@@ -11,16 +13,67 @@ function formatDate(dt: string) {
 }
 
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80",
-  "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800&q=80",
-  "https://images.unsplash.com/photo-1577175889968-f551f5944abd?w=800&q=80",
+  "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=900&q=80",
+  "https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=500&q=80",
+  "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=500&q=80",
+];
+
+const QUICK_ACTIONS = [
+  {
+    href: "/visitor/bookings",
+    icon: "🎫",
+    iconClass: styles.actionIconGreen,
+    title: "Book a Safari",
+    desc: "Reserve your visit slots and manage active bookings",
+    delay: "0s",
+  },
+  {
+    href: "/visitor/map",
+    icon: "🗺️",
+    iconClass: styles.actionIconBlue,
+    title: "Wildlife Map",
+    desc: "Explore hotspots and recent animal sightings",
+    delay: "0.05s",
+  },
+  {
+    href: "/visitor/species",
+    icon: "🔍",
+    iconClass: styles.actionIconGold,
+    title: "Identify Species",
+    desc: "Upload a photo or describe an animal to identify it",
+    delay: "0.1s",
+  },
+  {
+    href: "/visitor/complaints",
+    icon: "⚠️",
+    iconClass: styles.actionIconRed,
+    title: "Report Issue",
+    desc: "File complaints or report problems to administration",
+    delay: "0.15s",
+  },
+];
+
+const VISITOR_TIPS = [
+  "Stay on marked trails and follow ranger instructions.",
+  "Keep noise levels low to avoid disturbing wildlife.",
+  "Carry water and wear sun protection for outdoor visits.",
+  "Photography is welcome — do not use flash near animals.",
 ];
 
 export default function VisitorDashboard() {
-  const { announcements, isLoading } = useAnnouncements();
+  const { announcements, isLoading: annLoading } = useAnnouncements();
+  const { hotspots } = useHotspots();
+  const { bookings } = useBookings();
+
+  const activeBookings = bookings.filter(
+    (b) => b.status === "confirmed" || b.status === "pending"
+  ).length;
+  const uniqueSpecies = [...new Set(hotspots.map((h) => h.species))].length;
+  const hotspotCount = hotspots.length;
 
   return (
     <div className="fade-in">
+      {/* ── Hero ── */}
       <div className={styles.hero}>
         <div className={styles.heroImages}>
           {HERO_IMAGES.map((src, i) => (
@@ -37,55 +90,107 @@ export default function VisitorDashboard() {
         </div>
       </div>
 
-      <div className="page-header" style={{ marginTop: 32 }}>
-        <h2 className="page-title">Quick Actions</h2>
-        <p className="page-subtitle">Easily access important portals</p>
+      {/* ── Stats Strip ── */}
+      <div className={styles.statsStrip}>
+        <div className={styles.statCard}>
+          <span className={styles.statIcon}>🦁</span>
+          <div className={styles.statNum}>{hotspotCount}</div>
+          <div className={styles.statLabel}>Hotspots</div>
+        </div>
+        <div className={styles.statCard}>
+          <span className={styles.statIcon}>🌿</span>
+          <div className={styles.statNum}>{uniqueSpecies}</div>
+          <div className={styles.statLabel}>Species</div>
+        </div>
+        <div className={styles.statCard}>
+          <span className={styles.statIcon}>🎫</span>
+          <div className={styles.statNum}>{activeBookings}</div>
+          <div className={styles.statLabel}>My Bookings</div>
+        </div>
       </div>
 
-      <div className={styles.announcementsGrid} style={{ marginBottom: 32 }}>
-        <a href="/visitor/bookings" className={`card ${styles.annCard}`} style={{ textDecoration: 'none', display: 'block' }}>
-          <h3 className={styles.annTitle}>🎫 Book a Safari</h3>
-          <p className={styles.annBody}>Reserve your visit slots and view your active bookings.</p>
-        </a>
-        <a href="/visitor/map" className={`card ${styles.annCard}`} style={{ textDecoration: 'none', display: 'block' }}>
-          <h3 className={styles.annTitle}>🗺️ View Map</h3>
-          <p className={styles.annBody}>Explore the reserve hotspots and wildlife sightings.</p>
-        </a>
-        <a href="/visitor/species" className={`card ${styles.annCard}`} style={{ textDecoration: 'none', display: 'block' }}>
-          <h3 className={styles.annTitle}>🔍 Identify Species</h3>
-          <p className={styles.annBody}>Upload an image or describe a bird/animal to identify it.</p>
-        </a>
-        <a href="/visitor/complaints" className={`card ${styles.annCard}`} style={{ textDecoration: 'none', display: 'block' }}>
-          <h3 className={styles.annTitle}>⚠️ Report an Issue</h3>
-          <p className={styles.annBody}>File complaints or report lost items to the administration.</p>
-        </a>
+      {/* ── Quick Actions ── */}
+      <div className={styles.sectionHead} style={{ marginBottom: 16 }}>
+        <h2 className={styles.sectionTitle}>Quick Actions</h2>
+        <span className={styles.sectionBadge}>Explore</span>
       </div>
 
-      <div className="page-header">
-        <h2 className="page-title">Announcements</h2>
-        <p className="page-subtitle">Latest updates from the reserve</p>
+      <div className={styles.actionsGrid}>
+        {QUICK_ACTIONS.map((action) => (
+          <a
+            key={action.href}
+            href={action.href}
+            className={`${styles.actionCard} ${styles.actionCardAccent}`}
+            style={{ animationDelay: action.delay }}
+          >
+            <div className={`${styles.actionIconBox} ${action.iconClass}`}>
+              {action.icon}
+            </div>
+            <div>
+              <div className={styles.actionTitle}>{action.title}</div>
+              <div className={styles.actionDesc}>{action.desc}</div>
+            </div>
+            <svg
+              className={styles.actionArrow}
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </a>
+        ))}
       </div>
 
-      {isLoading && (
+      {/* ── Visitor Tips ── */}
+      <div className={styles.tipsBanner}>
+        <div className={styles.tipsIcon}>💡</div>
+        <div className={styles.tipsList}>
+          <div className={styles.tipsTitle}>Reserve Guidelines</div>
+          {VISITOR_TIPS.map((tip, i) => (
+            <div key={i} className={styles.tipItem}>
+              <span className={styles.tipDot}>▸</span>
+              <span>{tip}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Announcements ── */}
+      <div className={styles.sectionHead}>
+        <h2 className={styles.sectionTitle}>Announcements</h2>
+        {announcements.length > 0 && (
+          <span className={styles.sectionBadge}>{announcements.length} active</span>
+        )}
+      </div>
+
+      {annLoading && (
         <div className="loading-state">
           <div className="spinner" />
           <span>Loading announcements…</span>
         </div>
       )}
 
-      {!isLoading && announcements.length === 0 && (
-        <div className="empty-state">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      {!annLoading && announcements.length === 0 && (
+        <div className="empty-state card" style={{ padding: 48 }}>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ opacity: 0.35 }}>
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
             <path d="M13.73 21a2 2 0 0 1-3.46 0" />
           </svg>
-          <p>No announcements at this time.</p>
+          <p style={{ color: "var(--text-muted)", marginTop: 12 }}>No announcements at this time.</p>
         </div>
       )}
 
       <div className={styles.announcementsGrid}>
         {announcements.map((ann, i) => (
-          <div key={ann.id} className={`card ${styles.annCard}`} style={{ animationDelay: `${i * 0.05}s` }}>
+          <div
+            key={ann.id}
+            className={`card ${styles.annCard}`}
+            style={{ animationDelay: `${i * 0.05}s` }}
+          >
             <div className={styles.annHeader}>
               <span className="badge badge-success">Active</span>
               <span className={styles.annDate}>{formatDate(ann.created_at)}</span>

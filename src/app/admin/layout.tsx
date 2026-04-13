@@ -1,4 +1,6 @@
+"use client";
 import Sidebar from "@/components/shared/Sidebar";
+
 
 const adminNav = [
   {

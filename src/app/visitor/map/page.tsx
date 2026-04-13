@@ -41,6 +41,15 @@ export default function MapPage() {
           <div className="spinner" style={{ width: 32, height: 32 }} />
           <p>Fetching hotspot data…</p>
         </div>
+      ) : hotspots.length === 0 ? (
+        <div className="empty-state card" style={{ padding: 60, marginBottom: 20 }}>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+          </svg>
+          <h3>No Hotspots Detected</h3>
+          <p>We have not recorded any wildlife activity in the reserve recently.</p>
+        </div>
       ) : (
         <div className={styles.mapWrapper}>
           <HotspotMap hotspots={hotspots} />

@@ -547,3 +547,71 @@ tr:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--forest-500);
 }
+
+/* ── Leaflet map fixes ───────────────────────────────────────────────────── */
+/* The global CSS reset breaks Leaflet's internal tile grid.
+   These rules restore correct behaviour without affecting the rest of the UI. */
+.leaflet-container {
+  font-family: "Inter", sans-serif;
+  background: #0f2318;
+}
+
+.leaflet-tile-container img,
+.leaflet-tile {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-pane,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.leaflet-map-pane canvas,
+.leaflet-map-pane svg {
+  position: absolute;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  font-size: 10px;
+  background: rgba(10, 26, 15, 0.75);
+  color: var(--text-muted);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--forest-800);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  color: var(--text-primary);
+}
+
+.leaflet-popup-tip {
+  background: var(--forest-800);
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px;
+}
+
+.leaflet-bar a,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  background: var(--forest-800);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.leaflet-bar a:hover {
+  background: var(--forest-700);
+}

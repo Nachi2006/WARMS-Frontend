@@ -12,6 +12,18 @@
       "static/css/app/(auth)/login/page.css",
       "static/chunks/app/(auth)/login/page.js"
     ],
+    "/ranger/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/ranger/layout.css",
+      "static/chunks/app/ranger/layout.js"
+    ],
+    "/ranger/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/ranger/dashboard/page.css",
+      "static/chunks/app/ranger/dashboard/page.js"
+    ],
     "/visitor/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -24,6 +36,12 @@
       "static/css/app/visitor/dashboard/page.css",
       "static/chunks/app/visitor/dashboard/page.js"
     ],
+    "/visitor/bookings/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/visitor/bookings/page.css",
+      "static/chunks/app/visitor/bookings/page.js"
+    ],
     "/visitor/species/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -35,17 +53,6 @@
       "static/chunks/main-app.js",
       "static/css/app/visitor/map/page.css",
       "static/chunks/app/visitor/map/page.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/visitor/bookings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/visitor/bookings/page.css",
-      "static/chunks/app/visitor/bookings/page.js"
     ],
     "/visitor/complaints/page": [
       "static/chunks/webpack.js",

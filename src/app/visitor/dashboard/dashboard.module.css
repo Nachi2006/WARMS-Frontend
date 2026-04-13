@@ -1,8 +1,16 @@
+/* ── Local animation (CSS Modules scope @keyframes locally) ─────────────── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Hero ────────────────────────────────────────────────────────────────── */
 .hero {
   border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
-  height: 280px;
+  height: 300px;
+  margin-bottom: 36px;
 }
 
 .heroImages {
@@ -14,19 +22,18 @@
 
 .heroImgWrap {
   overflow: hidden;
-  animation: fadeIn 0.5s ease forwards;
-  opacity: 0;
+  animation: slideUp 0.5s ease forwards;
 }
 
 .heroImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.7s ease;
 }
 
 .heroImgWrap:hover .heroImg {
-  transform: scale(1.06);
+  transform: scale(1.07);
 }
 
 .heroOverlay {
@@ -34,16 +41,17 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(10, 26, 15, 0.95) 0%, transparent 100%);
-  padding: 32px 28px 24px;
+  background: linear-gradient(to top, rgba(10, 26, 15, 0.97) 0%, rgba(10, 26, 15, 0.4) 60%, transparent 100%);
+  padding: 40px 28px 28px;
 }
 
 .heroTitle {
   font-family: "Outfit", sans-serif;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 6px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .heroSub {
@@ -51,16 +59,202 @@
   font-size: 15px;
 }
 
+/* ── Stats strip ─────────────────────────────────────────────────────────── */
+.statsStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  background: rgba(26, 58, 40, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all var(--transition);
+  cursor: default;
+}
+
+.statCard:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.statIcon {
+  font-size: 22px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.statNum {
+  font-family: "Outfit", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--forest-300), var(--forest-200));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+
+/* ── Section header ──────────────────────────────────────────────────────── */
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.sectionBadge {
+  background: rgba(61, 160, 102, 0.15);
+  border: 1px solid rgba(61, 160, 102, 0.25);
+  border-radius: 999px;
+  color: var(--forest-300);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Quick action cards ──────────────────────────────────────────────────── */
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 44px;
+}
+
+.actionCard {
+  background: rgba(26, 58, 40, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px 18px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all var(--transition);
+  animation: slideUp 0.4s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+.actionCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(61, 160, 102, 0.06), transparent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.actionCard:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+.actionCard:hover::before {
+  opacity: 1;
+}
+
+.actionCardAccent {
+  border-left: 3px solid var(--forest-400);
+}
+
+.actionIconBox {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.actionIconGreen {
+  background: rgba(61, 160, 102, 0.18);
+  border: 1px solid rgba(61, 160, 102, 0.25);
+}
+
+.actionIconGold {
+  background: rgba(201, 135, 47, 0.18);
+  border: 1px solid rgba(201, 135, 47, 0.25);
+}
+
+.actionIconBlue {
+  background: rgba(61, 143, 160, 0.18);
+  border: 1px solid rgba(61, 143, 160, 0.25);
+}
+
+.actionIconRed {
+  background: rgba(224, 82, 82, 0.15);
+  border: 1px solid rgba(224, 82, 82, 0.2);
+}
+
+.actionTitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.actionDesc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.actionArrow {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: all var(--transition);
+  transform: translateX(-4px);
+}
+
+.actionCard:hover .actionArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Announcement cards ──────────────────────────────────────────────────── */
 .announcementsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
+  margin-bottom: 16px;
 }
 
 .annCard {
-  animation: fadeIn 0.4s ease forwards;
-  opacity: 0;
+  animation: slideUp 0.4s ease both;
   transition: transform var(--transition);
+  border-radius: 16px !important;
 }
 
 .annCard:hover {
@@ -81,7 +275,7 @@
 
 .annTitle {
   font-family: "Outfit", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 8px;
@@ -93,14 +287,69 @@
   line-height: 1.6;
 }
 
+/* ── Tips banner ─────────────────────────────────────────────────────────── */
+.tipsBanner {
+  background: linear-gradient(135deg, rgba(26, 58, 40, 0.8), rgba(15, 35, 24, 0.9));
+  border: 1px solid rgba(61, 160, 102, 0.2);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.tipsIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(61, 160, 102, 0.15);
+  border: 1px solid rgba(61, 160, 102, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.tipsList {
+  flex: 1;
+}
+
+.tipsTitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.tipItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.tipDot {
+  color: var(--forest-400);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .statsStrip { grid-template-columns: repeat(3, 1fr); }
+  .actionsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 640px) {
-  .heroImages {
-    grid-template-columns: 1fr;
-  }
-  .heroImgWrap:not(:first-child) {
-    display: none;
-  }
-  .hero {
-    height: 220px;
-  }
+  .heroImages { grid-template-columns: 1fr; }
+  .heroImgWrap:not(:first-child) { display: none; }
+  .hero { height: 220px; }
+  .statsStrip { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .actionsGrid { grid-template-columns: repeat(2, 1fr); }
 }

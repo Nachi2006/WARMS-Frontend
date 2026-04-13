@@ -1,0 +1,222 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/app/ranger/dashboard/dashboard.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/* ── Status banner ──────────────────────────────────────────────────────── */
+.dashboard_statusBanner__ADlKu {
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid;
+}
+
+.dashboard_online__1oV4C {
+  background: rgba(61, 160, 102, 0.12);
+  border-color: rgba(61, 160, 102, 0.3);
+  color: var(--forest-200);
+}
+
+.dashboard_offline___EvzP {
+  background: rgba(224, 168, 64, 0.12);
+  border-color: rgba(224, 168, 64, 0.3);
+  color: var(--gold-300);
+}
+
+.dashboard_statusDot__JlwYC {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px currentColor;
+  animation: dashboard_dotPulse__hePVA 2s ease-in-out infinite;
+}
+
+@keyframes dashboard_dotPulse__hePVA {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ── Counters ───────────────────────────────────────────────────────────── */
+.dashboard_counters__oRQOw {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.dashboard_counterCard__MA7KD {
+  background: linear-gradient(135deg, rgba(26, 58, 40, 0.8), rgba(15, 35, 24, 0.9));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  transition: all var(--transition);
+}
+
+.dashboard_counterCard__MA7KD:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+}
+
+.dashboard_counterNum__ZVog6 {
+  font-family: "Outfit", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--forest-300), var(--forest-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.dashboard_counterLabel__0IX5M {
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+
+/* ── Sync button ────────────────────────────────────────────────────────── */
+.dashboard_syncBtn__DM5Ap {
+  width: 100%;
+  padding: 15px;
+  font-size: 15px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+}
+
+/* ── Section head ───────────────────────────────────────────────────────── */
+.dashboard_sectionTitle__KQAf2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* ── Quick actions ──────────────────────────────────────────────────────── */
+.dashboard_quickActions__2kro5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.dashboard_actionCard__rcPSS {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(26, 58, 40, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 16px;
+  text-decoration: none;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.dashboard_actionCard__rcPSS:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.dashboard_actionCardSos__wirLZ {
+  border-color: rgba(224, 82, 82, 0.3);
+  background: rgba(224, 82, 82, 0.08);
+}
+
+.dashboard_actionCardSos__wirLZ:hover {
+  border-color: rgba(224, 82, 82, 0.5);
+  box-shadow: 0 8px 24px rgba(224, 82, 82, 0.2);
+}
+
+.dashboard_actionIcon__QwDLM {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(61, 160, 102, 0.15);
+  border: 1px solid rgba(61, 160, 102, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.dashboard_actionIconSos__MdgVJ {
+  background: rgba(224, 82, 82, 0.15);
+  border-color: rgba(224, 82, 82, 0.2);
+}
+
+.dashboard_actionTitle__Nfbwh {
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.dashboard_actionSub__2Kdo3 {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Sighting form wrapper ──────────────────────────────────────────────── */
+.dashboard_formCard__0Si8L {
+  background: rgba(26, 58, 40, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+}
+
+.dashboard_gpsRow__rUJCk {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  gap: 10px;
+}
+
+.dashboard_gpsBtn__bV1So {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+.dashboard_submitBtn__F1f8_ {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+

@@ -1,0 +1,208 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/app/ranger/ranger-layout.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/* ── Shell ──────────────────────────────────────────────────────────────── */
+.ranger-layout_shell__vFNdp {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--forest-900);
+  position: relative;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.ranger-layout_header__cZTPI {
+  background: rgba(15, 35, 24, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  padding-top: max(14px, env(safe-area-inset-top, 14px));
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.ranger-layout_headerBrand__FZ4Cg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ranger-layout_headerLogoWrap__HLXto {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+
+.ranger-layout_headerLogoGlow__h84_x {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61,160,102,0.3) 0%, transparent 70%);
+  animation: ranger-layout_rangerLogoGlow__HC_x_ 3s ease-in-out infinite;
+}
+
+@keyframes ranger-layout_rangerLogoGlow__HC_x_ {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.ranger-layout_headerInfo__NESya {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ranger-layout_headerTitle___GtSd {
+  font-family: "Outfit", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.ranger-layout_headerSub__jKNph {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--forest-400);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.ranger-layout_logoutBtn__ndGjM {
+  background: rgba(255, 100, 100, 0.08);
+  border: 1px solid rgba(224, 82, 82, 0.25);
+  border-radius: 8px;
+  color: rgba(240, 128, 128, 0.7);
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.ranger-layout_logoutBtn__ndGjM:hover {
+  color: #f08080;
+  background: rgba(224, 82, 82, 0.15);
+  border-color: rgba(224, 82, 82, 0.4);
+}
+
+/* ── Main content ───────────────────────────────────────────────────────── */
+.ranger-layout_main__z6sPn {
+  flex: 1 1;
+  padding: 20px 16px;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
+}
+
+/* ── Bottom Nav ─────────────────────────────────────────────────────────── */
+.ranger-layout_bottomNav__p639N {
+  background: rgba(15, 35, 24, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: fixed;
+  right: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  z-index: 200;
+}
+
+.ranger-layout_tabItem__EOpWv {
+  align-items: center;
+  color: var(--text-muted);
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  font-size: 10px;
+  font-weight: 600;
+  gap: 4px;
+  padding: 12px 8px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.ranger-layout_tabItem__EOpWv::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  border-radius: 0 0 3px 3px;
+  background: var(--forest-400);
+  transition: width var(--transition);
+}
+
+.ranger-layout_tabItem__EOpWv:hover {
+  color: var(--text-secondary);
+}
+
+.ranger-layout_tabActive__pr2qM {
+  color: var(--forest-300);
+}
+
+.ranger-layout_tabActive__pr2qM::after {
+  width: 28px;
+}
+
+.ranger-layout_tabLabel__2lFx3 {
+  font-size: 10px;
+}
+
+/* ── SOS tab special ─────────────────────────────────────────────────────── */
+.ranger-layout_tabSos__9Zi7Y {
+  color: rgba(224, 82, 82, 0.6) !important;
+}
+
+.ranger-layout_tabSos__9Zi7Y::after {
+  background: var(--danger);
+}
+
+.ranger-layout_tabSos__9Zi7Y.ranger-layout_tabActive__pr2qM {
+  color: #ff6b6b !important;
+}
+
+.ranger-layout_tabSosIcon__RgO_J {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(224, 82, 82, 0.15);
+  border: 1px solid rgba(224, 82, 82, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  margin-top: -18px;
+  box-shadow: 0 -4px 16px rgba(224, 82, 82, 0.2);
+}
+
+.ranger-layout_tabSos__9Zi7Y.ranger-layout_tabActive__pr2qM .ranger-layout_tabSosIcon__RgO_J {
+  background: rgba(224, 82, 82, 0.25);
+  border-color: rgba(224, 82, 82, 0.6);
+  box-shadow: 0 -4px 20px rgba(224, 82, 82, 0.4);
+}
+
+.ranger-layout_tabSos__9Zi7Y:hover .ranger-layout_tabSosIcon__RgO_J {
+  background: rgba(224, 82, 82, 0.2);
+  border-color: rgba(224, 82, 82, 0.5);
+}
+

@@ -34,23 +34,30 @@ export default function SOSPage() {
       <div className={styles.header}>
         <h1 className={styles.title}>Emergency SOS</h1>
         <p className={styles.subtitle}>
-          Press the button to broadcast your GPS location to all rangers and administrators
+          Press the button to broadcast your GPS location to all rangers and administrators instantly
         </p>
       </div>
 
-      {error && <div className="alert alert-error" style={{ marginBottom: 24 }}>{error}</div>}
+      {error && (
+        <div className="alert alert-error" style={{ marginBottom: 24, width: "100%" }}>
+          {error}
+        </div>
+      )}
 
       {sent ? (
         <div className={`card ${styles.sentCard} fade-in`}>
           <div className={styles.sentIcon}>✓</div>
           <h2 className={styles.sentTitle}>SOS Alert Sent!</h2>
-          <p className={styles.sentSub}>Alert #{sent.id} — Help is on the way</p>
+          <p className={styles.sentSub}>Alert #{sent.id} · Help is on the way</p>
           <div className={styles.sentCoords}>
-            📍 {sent.latitude.toFixed(5)}, {sent.longitude.toFixed(5)}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+            </svg>
+            {sent.latitude.toFixed(5)}, {sent.longitude.toFixed(5)}
           </div>
           <button
             className="btn-secondary"
-            style={{ marginTop: 20, width: "100%" }}
+            style={{ marginTop: 16, width: "100%" }}
             onClick={() => setSent(null)}
           >
             Send Another Alert
@@ -58,28 +65,52 @@ export default function SOSPage() {
         </div>
       ) : (
         <div className={styles.btnWrap}>
-          <button
-            id="sos-btn"
-            className={`${styles.sosBtn} ${sending ? styles.sending : "pulse-sos"}`}
-            onClick={handleSOS}
-            disabled={sending}
-            aria-label="Send Emergency SOS"
-          >
-            {sending ? (
-              <div className="spinner" style={{ width: 40, height: 40, borderColor: "rgba(255,255,255,0.3)", borderTopColor: "white" }} />
-            ) : (
+          <div className={styles.sosRings}>
+            {!sending && (
               <>
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="12" y1="8" x2="12" y2="12" />
-                  <line x1="12" y1="16" x2="12.01" y2="16" />
-                </svg>
-                <span className={styles.sosBtnText}>SOS</span>
+                <div className={styles.sosRing} />
+                <div className={styles.sosRing} />
+                <div className={styles.sosRing} />
               </>
             )}
-          </button>
+            <button
+              id="sos-btn"
+              className={`${styles.sosBtn} ${sending ? styles.sending : "pulse-sos"}`}
+              onClick={handleSOS}
+              disabled={sending}
+              aria-label="Send Emergency SOS"
+            >
+              {sending ? (
+                <div
+                  className="spinner"
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderColor: "rgba(255,255,255,0.25)",
+                    borderTopColor: "white",
+                    borderWidth: 3,
+                  }}
+                />
+              ) : (
+                <>
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  <span className={styles.sosBtnText}>SOS</span>
+                  <span className={styles.sosBtnSub}>Emergency</span>
+                </>
+              )}
+            </button>
+          </div>
+
           <p className={styles.sosHint}>
-            {sending ? "Getting your GPS location…" : "Hold to activate emergency alert"}
+            {sending ? (
+              <>📡 Getting your GPS location…</>
+            ) : (
+              <>Tap to activate emergency alert</>
+            )}
           </p>
         </div>
       )}
@@ -89,14 +120,21 @@ export default function SOSPage() {
           <div className={styles.infoIcon}>📡</div>
           <div>
             <div className={styles.infoTitle}>GPS Required</div>
-            <div className={styles.infoSub}>Allow location access before sending</div>
+            <div className={styles.infoSub}>Allow location access before sending alert</div>
           </div>
         </div>
         <div className={`card ${styles.infoCard}`}>
           <div className={styles.infoIcon}>📢</div>
           <div>
             <div className={styles.infoTitle}>Instant Broadcast</div>
-            <div className={styles.infoSub}>All rangers and admins are notified</div>
+            <div className={styles.infoSub}>All rangers and admins notified immediately</div>
+          </div>
+        </div>
+        <div className={`card ${styles.infoCard}`}>
+          <div className={styles.infoIcon}>🔒</div>
+          <div>
+            <div className={styles.infoTitle}>Confirmation Required</div>
+            <div className={styles.infoSub}>You&apos;ll be asked to confirm before sending</div>
           </div>
         </div>
       </div>
